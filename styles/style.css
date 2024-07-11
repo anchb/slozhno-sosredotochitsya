@@ -1,5 +1,436 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: var(--main-font-family);
+  font-size: var(--main-text-size);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+body {
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
+}
+
+button {
+  background-color: transparent;
+  border: none
+}
+
+@suppotrs (block-size: 100dvd) {
+  .header {
+    block-size: 100dvb;
+  }
+}
+
+.header {
+  display: grid;
+  padding-bottom: 40px;
+  position: relative;
+  justify-items: end;
+  align-items: center;
+  block-size: 100vh;
+  grid-template-rows: 1fr min-content 1fr;
+  min-block-size: 668px;
+  padding: var(--main-gap);
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
+  inset-block-start: var(--main-gap);
+  inset-inline-end: var(--main-gap);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
+  inset-inline-start: var(--main-gap);
+  inset-block-end: var(--main-gap);
+} 
+
+.header__rec {
+  position: absolute;
+  color: var(--nav-color);
+  font-size: var(--main-text-size);
+  line-height: var(--main-line-height);
+  text-transform: uppercase;
+  inset-inline-end: calc(var(--main-gap) + 28px);
+  inset-block-start: calc(var(--main-gap) + 2px);
+}
+
+.header__rec::after {
+  content: '';
+  position: absolute;
+  inline-size: 10px;
+  block-size: 10px;
+  margin: -5px -20px 0 0;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--nav-color);
+  background-color: var(--nav-color);
+  inset-inline-end: 0;
+  inset-block-start: 50%
+}
+
+.header__title {
+  font-weight: 700;
+  color: var(--header-logo-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: var(--header-logo-size);
+  line-height: 95.7px;
+  justify-self: start;
+  }
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--nav-color);
+  text-transform: lowercase;
+  line-height: var(--main-line-height);
+  font-weight: 400;
+  padding: 2px 13px 4px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  appearance: none;
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--nav-color);
+  pointer-events: none
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--nav-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--nav-color);
+  outline: none
+}
+
+.header__theme-menu-button:focus-visible::after {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  inset-block-end: -2px;
+  inset-inline-start: 0;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--main-bg-color);
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.content-section {
+  margin: 40px 0 40px 0;
+  padding: 0 var(--main-gap)
+}
+
+.content:not(:last-of-type) {
+  padding-bottom: 50px
+}
+
+.content__title {
+  color: var(--section-heading-color);
+  font-size: inherit;
+  padding-bottom: 20px
+}
+
+.content__sabtitle {
+  font-size: inherit;
+  color: var(--sabtitle-color);
+  margin-bottom: var(--main-gap);
+}
+
+.tips .content__sabtitle {
+  font-weight: 400;
+}
+
+.content__sabtitle-bold {
+  font-size: inherit;
+  color: var(--sabtitle-color);
+  margin-bottom: 20px;
+}
+
+.content__list {
+  display: grid;
+  gap: 20px
+}
+
+.content__text {
+  line-height: 23.4px;
+}
+
+.content_link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.content__images-gallery {
+  display: grid;
+  gap: var(--main-gap);
+  justify-items: center;
+}
+
+.image .content__sabtitle {
+  font-weight: 700;
+}
+
+.content__image {
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-inline-size: 100%;
+}
+
+@suppotrs (block-size: 100dvd) {
+  .footer {
+    block-size: 100dvb;
+  }
+}
+
+.footer {
+  block-size: 100vh;
+  min-height: 668px;
+  display: grid;
+  place-items: center;
+  padding-top: var(--main-gap);
+  padding-bottom: var(--main-gap);
+  position: relative;
+}
+
+.footer__title {
+  font-size: var(--footer-logo-size);
+  color: var(--footer-logo-color);
+}
+
+.footer__decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
+  inset-inline-end: var(--main-gap);
+  inset-block-start: var(--main-gap);
+}
+
+.footer__decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
+  inset-inline-start: var(--main-gap);
+  inset-block-end: var(--main-gap)
+} 
+
+@media (width >= 768px) {
+  
+  .header {
+    --main-gap: 20px;
+    padding: 20px 20px 20px 0;
+    min-block-size: 1024px;
+    margin-bottom: 60px;
+  }
+
+  .header__title {
+    position: relative;
+  }
+
+  .paragraph-box {
+    justify-self: end;
+    max-inline-size: 364px;
+  }
+
+  .header__theme-menu {
+    align-self: center;
+  }
+
+  .content-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .content:not(:last-of-type) {
+    padding-bottom: 80px
+  }
+
+  .content__title {
+    max-inline-size: 236px;
+  }
+
+  .why {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .why .content__title {
+    justify-self: start;
+  }
+
+  .why .content__list {
+    justify-self: end;
+    max-inline-size: 472px;
+  }
+
+  .tips {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: end;
+  }
+
+  .tips .content__title {
+    justify-self: start;
+  }
+
+  .tips .content__sabtitle-bold {
+    margin-bottom: 5px;
+  }
+
+  .tips .content__list {
+    max-inline-size: 472px;
+  }
+
+  .images {
+    padding-bottom: 20px;
+  }
+
+  .content__images-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    'sunset sunset icecream'
+    'music books icecream'
+    'music street street';
+    gap: 20px;
+  }
+
+  .content__image-sunset {
+    grid-area: 'sunset';
+    grid-row: 1;
+    grid-column: span 2;
+  }
+
+  .content__image-icecream {
+    grid-area: 'icecream';
+    grid-row: span 2;
+    grid-column: 3;
+  }
+
+  .content__image-music {
+    grid-area: 'music';
+    grid-row: span 4;
+    grid-column: 1;
+  }
+
+  .content__image-books {
+    grid-area: 'books';
+  }
+
+  .content__image-street {
+    grid-area: 'street';
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  .footer {
+    block-size: 1024px;
+    padding: 20px
+  }
+
+  .footer__decorated-zone::before {
+    content: '';
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+    border-inline-end: 1px solid var(--nav-color);
+    border-block-start: 1px solid var(--nav-color);
+    inset-inline-end: 20px;
+    inset-block-start: 20px
+  }
+  
+  .footer__decorated-zone::after {
+    content: '';
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+    border-inline-start: 1px solid var(--nav-color);
+    border-block-end: 1px solid var(--nav-color);
+    inset-inline-start: 20px;
+    inset-block-end: 20px
+  } 
+
+}
+
+@media (width >= 1024px) {
+
+  .header {
+    min-block-size: 728px;
+    padding-left: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-left: -20px;
+  }
+
+  .paragraph-box {
+    min-inline-size: 491px;
+  }
+
+  .content__title {
+    min-inline-size: 314.96px;
+  }
+  
+  .content__list {
+    min-inline-size: 648.92px;
+  }
+
+  .reasons .content__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer {
+    block-size: 728px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
 }
