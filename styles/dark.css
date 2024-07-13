@@ -10,23 +10,19 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   background-image: url(../images/cover-image-dark.png);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   --main-bg-color: #000028;
   --sabtitle-color: #000028;
   --accent-color: #FF0070;
   --nav-color: #FF0070;
-  --header-logo-color: #DB00FF;
-  --footer-logo-color: #DB00ff;
+  --nav-hover-color: rgba(255, 0, 112, 0.4);
+  --logo-color: #DB00FF;
   --section-heading-color: #FF0070;
   --main-text-size: 18px;
   --main-gap: 10px;
   --main-line-height: 18px;
   --main-font-family: 'IBM Plex Mono', monospace;
   --main-text-color: #F1B2CE;
-  --header-logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --footer-logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 } 
 
 :root.theme_dark {
@@ -35,6 +31,5 @@
   --accent-color: #FF0070;
   --name-accent: #DB00FF;
   --main-text-color: #F1B2CE;
-  --header-logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --footer-logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
